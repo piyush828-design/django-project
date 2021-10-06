@@ -1,0 +1,43 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %} 
+My Blog 
+{% endblock %} 
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "blog/post.css" %}" />
+  <link rel="stylesheet" href="{% static "blog/index.css" %}" />
+{% endblock %}
+
+{% block content %}
+<section id="welcome">
+  <header>
+    <img src="{% static "blog/images/piyush.PNG" %}" alt="Piyush - The Author Of This Blog" />
+    <h2>PIYUSH'S BLOG</h2>
+  </header>
+  <p>Hi, I am Piyush and I love to blog about the places which i visit and human psychology(xd)!!</p>
+</section>
+
+<section id="latest-posts">
+  <h2>My Latest Thoughts</h2>
+
+  <ul>
+  {% for post in posts %}
+    {% include "blog/includes/post.html" %}
+  {% endfor %}
+  </ul>
+</section>
+
+<section id="about">
+  <h2>What I Do</h2>
+  <p>
+   I am a student pursuing b.tech in information technology..
+   .love spending time with close ones,well!! kinda introvert;) and listening songs!!
+  </p>
+  <p>
+  My goal is to become a programmer..and want to fulfill my all wishes and dreams with my family!!
+
+  </p>
+</section>
+{% endblock %}
